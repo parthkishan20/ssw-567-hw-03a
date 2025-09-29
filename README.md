@@ -1,6 +1,6 @@
 # GitHub Repository Analyzer
 
-[![Build Status](https://app.travis-ci.com/parthkishan20/hw03a.svg?token=UxxCxyrzFEycY3FKUe5H&branch=main)](https://app.travis-ci.com/parthkishan20/hw03a)
+[![Build Status](https://app.travis-ci.com/parthkishan20/ssw-567-hw-03a.svg?token=UxxCxyrzFEycY3FKUe5H&branch=main)](https://app.travis-ci.com/parthkishan20/hw03a)
 
 ## What This Program Does
 
@@ -9,20 +9,26 @@ This program connects to GitHub's website and collects information about a user'
 ## Quick Start Guide
 
 ### Step 1: Get the Code
+
 Download this program to your computer by typing this in your terminal:
+
 ```bash
 git clone https://github.com/parthkishan20/hw03a.git
 cd hw03a
 ```
 
 ### Step 2: Install Required Tools
+
 Install the tools this program needs:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Step 3: Run the Program
+
 Try it out with the interactive demo:
+
 ```bash
 python demo.py
 ```
@@ -32,6 +38,7 @@ The program will ask if you want to continue. Type `y` and press Enter to see it
 ## Example: What You'll See
 
 When you run the program, it shows results like this:
+
 ```
 Repo: my-website Number of commits: 15
 Repo: calculator-app Number of commits: 8
@@ -46,6 +53,7 @@ Summary:
 ## How to Test the Program
 
 Make sure everything works correctly by running these tests:
+
 ```bash
 python -m pytest tests/ -v
 ```
@@ -61,14 +69,16 @@ I split the program into small, independent pieces so each part can be tested se
 
 **2. Handling Problems Gracefully**
 The internet can be unreliable, so I made the program handle common problems:
+
 - When a user doesn't exist on GitHub
 - When GitHub limits how many requests we can make
 - When the internet connection is slow or fails
 
 **3. Clear Separation of Tasks**
 I created different classes for different jobs:
+
 - `GitHubClient`: Talks to GitHub's website
-- `GitHubAnalyzer`: Processes the information 
+- `GitHubAnalyzer`: Processes the information
 - `format_output`: Makes the results look nice
 
 ### Testing Challenges I Faced
@@ -98,14 +108,16 @@ The result is a program that's reliable, well-tested, and easy to modify or exte
 ## Technical Details
 
 **Programming Language**: Python 3.8+  
-**Main Libraries Used**: 
+**Main Libraries Used**:
+
 - `requests` - for connecting to GitHub
 - `pytest` - for testing the code
 - `typing` - for clearer code documentation
 
 **Files in This Project**:
+
 - `src/github_api.py` - Main program logic
-- `demo.py` - Interactive demonstration  
+- `demo.py` - Interactive demonstration
 - `tests/test_github_api.py` - All the tests
 - `.travis.yml` - Automatic testing configuration
 
@@ -124,8 +136,6 @@ The result is a program that's reliable, well-tested, and easy to modify or exte
 **Author**: Parth Patel
 
 This project demonstrates professional software development practices including unit testing, continuous integration, and clean code architecture.
-
-
 
 Design and Testing Reflection
 When designing this project, the main focus was making the code easy to test and maintain. To achieve this, the program was structured so that each part has a clear and simple responsibility — such as fetching data from GitHub, processing that data, and formatting the output separately. This separation helps testers write precise tests for each component independently.
