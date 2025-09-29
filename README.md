@@ -1,6 +1,6 @@
 # GitHub Repository Analyzer
 
-[![Build Status](https://app.travis-ci.com/parthkishan20/ssw-567-hw-03a.svg?token=UxxCxyrzFEycY3FKUe5H&branch=main)](https://app.travis-ci.com/parthkishan20/hw03a)
+[![Build Status](https://app.travis-ci.com/parthkishan20/ssw-567-hw-03a.svg?token=UxxCxyrzFEycY3FKUe5H&branch=main)](https://app.travis-ci.com/parthkishan20/ssw-567-hw-03a)
 
 ## What This Program Does
 
