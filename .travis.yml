@@ -1,58 +1,47 @@
 language: python
 
-# Test on multiple Python versions
 python:
   - "3.8"
-  - "3.9" 
+  - "3.9"
   - "3.10"
   - "3.11"
 
-# Use Ubuntu 20.04 (focal)
 dist: focal
-
-# Cache pip dependencies for faster builds
 cache: pip
 
-# Install dependencies
+env:
+  global:
+    - PYTHONPATH=$PYTHONPATH:./src
+
 install:
   - pip install --upgrade pip
   - pip install -r requirements.txt
+  - pip install pytest pytest-cov
 
-# Set up environment variables
-env:
-  - PYTHONPATH=$PYTHONPATH:./src
-
-# Commands to run before testing (syntax check)
 before_script:
   - python -m py_compile src/github_api.py
-  - python -m py_compile demo.py
   - python -m py_compile tests/test_github_api.py
+  # NOTE: Do NOT run/compile demo.py here if it can hit the real API.
 
-# Commands to run tests
 script:
-  - python -m pytest tests/ -v --cov=src --cov-report=term-missing
-  - echo "n" | python demo.py  # Run demo in non-interactive mode
+  # Run ONLY unit tests (no network). Exclude integration-marked tests.
+  - python -m pytest tests/ -v -m "not integration" --cov=src --cov-report=term-missing
 
-# Optional: Generate coverage report and upload to codecov
 after_success:
   - pip install codecov
   - codecov
 
-# Build configuration
+# Do NOT run integration tests on this mocking branch
 jobs:
-  include:
-    - stage: "Integration Tests"
-      python: "3.9"
-      script: python -m pytest tests/ -m integration -v
-      if: branch = main
+  include: []
 
-# Only build on main branch and pull requests
+# Build this branch explicitly (and your main branches if you want)
 branches:
   only:
+    - HW03a_Mocking
     - main
     - master
 
-# Email notifications
 notifications:
   email:
     on_success: never
