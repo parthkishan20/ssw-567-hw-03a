@@ -13,8 +13,8 @@ This program connects to GitHub's website and collects information about a user'
 Download this program to your computer by typing this in your terminal:
 
 ```bash
-git clone https://github.com/parthkishan20/hw03a.git
-cd hw03a
+git clone https://github.com/parthkishan20/ssw-567-hw-03a.git
+cd ssw-567-hw-03a
 ```
 
 ### Step 2: Install Required Tools
@@ -131,7 +131,7 @@ The result is a program that's reliable, well-tested, and easy to modify or exte
 
 ## Repository Information
 
-**GitHub URL**: https://github.com/parthkishan20/hw03a  
+**GitHub URL**: https://github.com/parthkishan20/ssw-567-hw-03a  
 **Assignment**: SSW567 - Software Testing  
 **Author**: Parth Patel
 
